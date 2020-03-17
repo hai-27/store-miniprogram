@@ -1,13 +1,46 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/goods/goods",
+    "pages/shoppingCart/shoppingCart",
+    "pages/mine/mine",
     "pages/logs/logs"
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#ff6700",
+    "navigationBarTitleText": "小小米",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#ff6700",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/static/icon/home.png",
+        "selectedIconPath": "/static/icon/home_fill.png"
+      },
+      {
+        "pagePath": "pages/goods/goods",
+        "text": "发现",
+        "iconPath": "/static/icon/search.png",
+        "selectedIconPath": "/static/icon/search_fill.png"
+      },
+      {
+        "pagePath": "pages/shoppingCart/shoppingCart",
+        "text": "购物车",
+        "iconPath": "/static/icon/shoppingCart.png",
+        "selectedIconPath": "/static/icon/shoppingCart_fill.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "/static/icon/user.png",
+        "selectedIconPath": "/static/icon/user_fill.png"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
