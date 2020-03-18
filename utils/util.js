@@ -14,6 +14,37 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+const baseURL = "http://47.115.85.237:3000/";
+// const baseURL = "http://localhost:3000/";
+const $ajax = (api, params = {}) => {
+  const url = baseURL + api;
+  return new Promise((resolve) => {
+    wx.showLoading({
+      title: '加载中...',
+    });
+    wx.request({
+      header: {
+        'content-type': 'application/json'
+      },
+      url,
+      method: params.type ? params.type : "post",
+      data: params.data ? params.data : {},
+      success: function(res) {
+        resolve(res.data);
+      },
+      fail: function(error) {
+        console.log(error);
+      },
+      complete: function(res) {
+        wx.hideLoading();
+        // console.log(res)
+      }
+    })
+  });
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  baseURL,
+  $ajax
 }
