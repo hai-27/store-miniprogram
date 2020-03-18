@@ -1,2 +1,10 @@
 <!--index.wxml-->
-
+<view>
+  <swiper autoplay circular interval="2000" duration="500" style="height:180px">
+    <block wx:for="{{carousel}}" wx:key="{{item.carousel_id}}">
+      <swiper-item>
+        <cover-image src="{{baseURL+item.imgPath}}"></cover-image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
