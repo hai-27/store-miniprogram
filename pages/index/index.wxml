@@ -2,10 +2,10 @@
 
 <!-- 轮播图 -->
 <view>
-  <swiper autoplay circular interval="2000" duration="500" style="height:180px">
+  <swiper autoplay circular interval="3000" duration="1000" style="height:180px">
     <block wx:for="{{carousel}}" wx:key="{{item.carousel_id}}">
       <swiper-item>
-        <cover-image src="{{baseURL+item.imgPath}}"></cover-image>
+        <image src="{{baseURL+item.imgPath}}" style="width:100%;height:180px;"></image>
       </swiper-item>
     </block>
   </swiper>
