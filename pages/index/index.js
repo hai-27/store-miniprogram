@@ -10,17 +10,35 @@ Page({
    */
   data: {
     baseURL,
-    carousel: "",
-    a: "asd"
+    carousel: '',
+    category: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: async function(options) {
-    let res = await $ajax('resources/carousel');
+    // 从后端获取需要的数据
+    let carouselRes = await $ajax('resources/carousel'); // 轮播图
+    let categoryRes = await $ajax('product/getCategory'); // 分类列表
+
+    // 处理分类列表
+    let categoryTemp = [];
+    let item = [];
+    for (let i = 0; categoryRes.category.length > i; i++) {
+      const temp = categoryRes.category[i];
+      if ((i + 1) % 4 == 0) {
+        item.push(temp);
+        categoryTemp.push(item);
+        item = [];
+      } else {
+        item.push(temp);
+      }
+    }
+
     this.setData({
-      carousel: res.carousel
+      carousel: carouselRes.carousel,
+      category: categoryTemp
     })
   },
 

@@ -1,4 +1,6 @@
 <!--index.wxml-->
+
+<!-- 轮播图 -->
 <view>
   <swiper autoplay circular interval="2000" duration="500" style="height:180px">
     <block wx:for="{{carousel}}" wx:key="{{item.carousel_id}}">
@@ -8,3 +10,17 @@
     </block>
   </swiper>
 </view>
+<!-- 轮播图 -->
+
+<!-- 分类列表 -->
+<view class="category-list">
+  <i-grid i-class="grid" wx:for="{{category}}" wx:for-item="temp" wx:key="{{index}}">
+    <i-grid-item wx:for="{{temp}}" wx:key="{{item.category_id}}">
+      <i-grid-icon>
+        <image src="{{'../../static/icon/category_'+item.category_id+'.png'}}" />
+      </i-grid-icon>
+      <i-grid-label>{{item.category_name}}</i-grid-label>
+    </i-grid-item>
+  </i-grid>
+</view>
+<!-- 分类列表 -->

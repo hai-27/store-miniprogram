@@ -1,1 +1,12 @@
 /**index.wxss**/
+
+/* 分类列表 */
+.category-list .grid {
+  height: 70px;
+  border: 0;
+}
+.category-list .grid .item-index--i-grid-item{
+  border: 0;
+  padding: 10px;
+}
+/* 分类列表 */
