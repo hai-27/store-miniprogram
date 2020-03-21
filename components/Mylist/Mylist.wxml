@@ -12,7 +12,7 @@
             <h3 class="pro-des">{{item.product_intro}}</h3>
             <p class="pro-price">
               <text>{{item.product_selling_price}}元</text>
-              <text class="del">{{item.product_price}}元</text>
+              <text class="del" wx:if="{{item.product_selling_price<item.product_price}}">{{item.product_price}}元</text>
             </p>
           </view>
         </li>
