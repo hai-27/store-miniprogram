@@ -1,1 +1,4 @@
 /* pages/goods/goods.wxss */
+page{
+  background-color: #f5f5f5;
+}

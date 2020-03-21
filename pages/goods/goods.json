@@ -1,3 +1,9 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "my-list": "../../components/Mylist/Mylist",
+    "SearchBar": "../../components/weui/SearchBar/searchbar",
+    "i-tabs": "../../components/iview/tabs/index",
+    "i-tab": "../../components/iview/tab/index",
+    "i-load-more": "../../components/iview/load-more/index"
+  }
 }

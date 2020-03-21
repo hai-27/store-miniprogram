@@ -3,5 +3,24 @@
  * Copyright 2020 Tencent, Inc.
  * Licensed under the MIT license
  */
- @import "./weui-searchbar.wxss";
-.searchbar-result{margin-top:0;font-size:14px}.searchbar-result .weui-cell__bd{padding:2px 0 2px 20px;color:var(--weui-FG-1)}.searchbar-result:before{display:none}
+@import "./weui-searchbar.wxss";
+
+.searchbar-result {
+  width: 100%;
+  min-height: 100px;
+  margin-top: 0;
+  font-size: 14px;
+  z-index: 3000;
+  position: absolute;
+  background-color: #fff;
+}
+
+.searchbar-result .weui-cell__bd {
+  padding: 8px 0 8px 10px;
+  border-bottom: 1px solid #e9eaec;
+  color: #191919;
+}
+
+.searchbar-result:before {
+  display: none;
+}

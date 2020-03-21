@@ -1,2 +1,19 @@
 <!--pages/goods/goods.wxml-->
-<text>pages/goods/goods.wxml</text>
+<!-- 搜索栏 -->
+<view>
+  <SearchBar></SearchBar>
+</view>
+<!-- 搜索栏/ -->
+<!-- 标签栏 -->
+<view>
+  <i-tabs current="{{ current_scroll }}" scroll bindchange="handleChangeScroll">
+    <block wx:for="{{category}}">
+      <i-tab key="{{item.category_id}}" title="{{item.category_name}}"></i-tab>
+    </block>
+  </i-tabs>
+</view>
+<!-- 标签栏/ -->
+<view>
+  <my-list arr="{{product}}"></my-list>
+</view>
+<i-load-more tip="暂无更多数据" loading="{{ false }}" wx:if="{{productTotal == product.length}}"/>

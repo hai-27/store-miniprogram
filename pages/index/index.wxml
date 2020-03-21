@@ -9,7 +9,7 @@
     </block>
   </swiper>
 </view>
-<!-- 轮播图 -->
+<!-- 轮播图/ -->
 <!-- 分类列表 -->
 <view class="category-list">
   <i-grid i-class="grid" wx:for="{{category}}" wx:for-item="temp" wx:key="{{index}}">
@@ -21,10 +21,10 @@
     </i-grid-item>
   </i-grid>
 </view>
-<!-- 分类列表 -->
+<!-- 分类列表/ -->
 <!-- 热门商品推销列表 -->
 <my-list arr="{{phoneList}}" titleName="手机热买"></my-list>
 <my-list arr="{{tvList}}" titleName="电视机热买"></my-list>
 <my-list arr="{{applianceList}}" titleName="家电热买"></my-list>
 <my-list arr="{{accessoryList}}" titleName="配件热买"></my-list>
-<!-- 热门商品推销列表 -->
+<!-- 热门商品推销列表/ -->
