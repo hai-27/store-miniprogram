@@ -23,26 +23,8 @@
 </view>
 <!-- 分类列表 -->
 <!-- 热门商品推销列表 -->
-<view class="promo-list">
-  <block wx:for="11">
-    <view class="list-main">
-      <view class="list-title">手机热买</view>
-      <ul>
-        <li wx:for="111111" class="pro-item">
-          <block>
-            <image lazy-load heightFix src="http://47.115.85.237:3000/public/imgs/phone/Redmi-k30.png" />
-          </block>
-          <view class="pro-info">
-            <h2 class="pro-title">小米8</h2>
-            <h3 class="pro-des">手机手机手机手机手机手机手机手机手机手机手机</h3>
-            <p class="pro-price">
-              <text>1000元</text>
-              <text class="del">1299元</text>
-            </p>
-          </view>
-        </li>
-      </ul>
-    </view>
-  </block>
-</view>
+<my-list arr="{{phoneList}}" titleName="手机热买"></my-list>
+<my-list arr="{{tvList}}" titleName="电视机热买"></my-list>
+<my-list arr="{{applianceList}}" titleName="家电热买"></my-list>
+<my-list arr="{{accessoryList}}" titleName="配件热买"></my-list>
 <!-- 热门商品推销列表 -->

@@ -11,7 +11,11 @@ Page({
   data: {
     baseURL,
     carousel: '',
-    category: ''
+    category: '',
+    phoneList: '',
+    tvList: '',
+    applianceList: '',
+    accessoryList: ''
   },
 
   /**
@@ -21,6 +25,37 @@ Page({
     // 从后端获取需要的数据
     let carouselRes = await $ajax('resources/carousel'); // 轮播图
     let categoryRes = await $ajax('product/getCategory'); // 分类列表
+     // 手机热买推销数据
+    let phoneList = await $ajax('product/getPromoProduct', {
+      data: {
+        categoryName: "手机"
+      }
+    });
+    // 电视机热买推销数据
+    let tvList = await $ajax('product/getPromoProduct', {
+      data: {
+        categoryName: "电视机"
+      }
+    });
+    // 家电热买推销数据
+    let applianceList = await $ajax('product/getHotProduct', {
+      data: {
+        categoryName: ["电视机", "空调", "洗衣机"],
+      }
+    });
+    // 配件热买推销数据
+    let accessoryList = await $ajax('product/getHotProduct', {
+      data: {
+        categoryName: ["保护套", "保护膜", "充电器", "充电宝"]
+      }
+    });
+
+
+    // 删除最后一条数据，保留6条数据
+    phoneList.Product.pop();
+    tvList.Product.pop();
+    applianceList.Product.pop();
+    accessoryList.Product.pop();
 
     // 处理分类列表
     let categoryTemp = [];
@@ -38,7 +73,11 @@ Page({
 
     this.setData({
       carousel: carouselRes.carousel,
-      category: categoryTemp
+      category: categoryTemp,
+      phoneList: phoneList.Product,
+      tvList: tvList.Product,
+      applianceList: applianceList.Product,
+      accessoryList: accessoryList.Product
     })
   },
 

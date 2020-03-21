@@ -1,0 +1,22 @@
+<view class="list">
+  <block>
+    <view class="list-main">
+      <view class="list-title" wx:if="{{titleName}}">{{titleName}}</view>
+      <ul>
+        <li wx:for="{{arr}}" class="pro-item">
+          <block>
+            <image lazy-load heightFix src="{{baseURL+item.product_picture}}" />
+          </block>
+          <view class="pro-info">
+            <h2 class="pro-title">{{item.product_name}}</h2>
+            <h3 class="pro-des">{{item.product_intro}}</h3>
+            <p class="pro-price">
+              <text>{{item.product_selling_price}}元</text>
+              <text class="del">{{item.product_price}}元</text>
+            </p>
+          </view>
+        </li>
+      </ul>
+    </view>
+  </block>
+</view>
