@@ -1,7 +1,7 @@
 <!--pages/goods/goods.wxml-->
 <!-- 搜索栏 -->
 <view>
-  <SearchBar></SearchBar>
+  <SearchBar bind:myevent="onSearch"></SearchBar>
 </view>
 <!-- 搜索栏/ -->
 <!-- 标签栏 -->

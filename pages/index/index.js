@@ -23,7 +23,7 @@ Page({
     // wx.switchTab不支持传递参数
     // 把点击的分类id存在globalData中，跳转发现页面后可以获取到
     getApp().globalData.categoryId = e.currentTarget.dataset.categoryid;
-    console.log(getApp().globalData.categoryId)
+    // d导航到发现页面
     wx.switchTab({
       url: "/pages/goods/goods"
     })

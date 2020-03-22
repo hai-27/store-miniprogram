@@ -4,7 +4,7 @@
       <form class="weui-search-bar__form">
         <view class="weui-search-bar__box">
           <i class="weui-icon-search"></i>
-          <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+          <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" bindconfirm="searchConfirm" />
           <span class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput"></span>
         </view>
         <label class="weui-search-bar__label" bindtap="showInput">
@@ -15,24 +15,14 @@
       <view class="weui-search-bar__cancel-btn" bindtap="hideInput">取消</view>
     </view>
     <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
-      <view class="weui-cell weui-cell_active weui-cell_access">
+      <view class="weui-cell weui-cell_active weui-cell_access" data-search="{{inputVal}}" bindtap="searchItemTap">
         <view class="weui-cell__bd weui-cell_primary">
-          <view>实时搜索文本</view>
+          <view>{{inputVal}}</view>
         </view>
       </view>
-      <view class="weui-cell weui-cell_active weui-cell_access">
+      <view class="weui-cell weui-cell_active weui-cell_access" wx:for="{{showSearch}}" wx:key="{{item}}" data-search="{{item}}" bindtap="searchItemTap">
         <view class="weui-cell__bd weui-cell_primary">
-          <view>实时搜索文本</view>
-        </view>
-      </view>
-      <view class="weui-cell weui-cell_active weui-cell_access">
-        <view class="weui-cell__bd weui-cell_primary">
-          <view>实时搜索文本</view>
-        </view>
-      </view>
-      <view class="weui-cell weui-cell_active weui-cell_access">
-        <view class="weui-cell__bd weui-cell_primary">
-          <view>实时搜索文本</view>
+          <view>{{item}}</view>
         </view>
       </view>
     </view>

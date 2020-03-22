@@ -31,6 +31,18 @@ Page({
       this.getData(); // 获取商品数据
     }
   },
+  onSearch(e){
+    let {search} = e.detail;
+    if (search != this.data.search){
+      this.setData({
+        search,
+        current_scroll: -1,
+        currentPage: 1,
+        product: []
+      })
+      this.getData(); // 获取搜索的商品数据
+    }
+  },
   // 获取商品数据
   async getData() {
     let api = '';
