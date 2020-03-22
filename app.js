@@ -40,6 +40,7 @@ App({
   globalData: {
     userInfo: null,
     baseURL,
-    $ajax
+    $ajax,
+    categoryId: 0
   }
 })

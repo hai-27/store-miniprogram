@@ -3,7 +3,7 @@
     <view class="list-main">
       <view class="list-title" wx:if="{{titleName}}">{{titleName}}</view>
       <ul>
-        <li wx:for="{{arr}}" class="pro-item">
+        <li wx:for="{{arr}}" wx:key="{{item.product_id}}" class="pro-item">
           <block>
             <image lazy-load heightFix src="{{baseURL+item.product_picture}}" />
           </block>

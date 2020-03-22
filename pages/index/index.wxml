@@ -14,10 +14,12 @@
 <view class="category-list">
   <i-grid i-class="grid" wx:for="{{category}}" wx:for-item="temp" wx:key="{{index}}">
     <i-grid-item wx:for="{{temp}}" wx:key="{{item.category_id}}">
-      <i-grid-icon>
-        <image src="{{'../../static/icon/category_'+item.category_id+'.png'}}" />
-      </i-grid-icon>
-      <i-grid-label>{{item.category_name}}</i-grid-label>
+      <view bindtap="tapCategory" data-categoryid="{{item.category_id}}">
+        <i-grid-icon>
+          <image src="{{'../../static/icon/category_'+item.category_id+'.png'}}" />
+        </i-grid-icon>
+        <i-grid-label>{{item.category_name}}</i-grid-label>
+      </view>
     </i-grid-item>
   </i-grid>
 </view>

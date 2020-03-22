@@ -18,16 +18,18 @@ Page({
     productTotal: 0
   },
   // 选择分类
-  handleChangeScroll({
-    detail
-  }) {
-    this.setData({
-      search: '',
-      current_scroll: detail.key,
-      currentPage: 1,
-      product: []
-    });
-    this.getData(); // 获取商品数据
+  handleChangeScroll({detail}) {
+    if (this.data.current_scroll != detail.key) {
+      this.setData({
+        search: '',
+        current_scroll: detail.key,
+        currentPage: 1,
+        product: []
+      });
+      // 修改存在globalData中的分类id
+      getApp().globalData.categoryId = detail.key;
+      this.getData(); // 获取商品数据
+    }
   },
   // 获取商品数据
   async getData() {
@@ -86,7 +88,19 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    // 从首页点击分类跳转过来
+    // 获取存在globalData中的分类id
+    let categoryId = getApp().globalData.categoryId;
+    // 如果globalData中的分类id与当前页面显示的分类id不等于，重新加载数据
+    if (categoryId != this.data.current_scroll) {
+      this.setData({
+        current_scroll: categoryId,
+        search: '',
+        currentPage: 1,
+        product: []
+      })
+      this.getData()
+    }
   },
 
   /**
