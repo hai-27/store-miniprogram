@@ -4,17 +4,19 @@
       <view class="list-title" wx:if="{{titleName}}">{{titleName}}</view>
       <ul>
         <li wx:for="{{arr}}" wx:key="{{item.product_id}}" class="pro-item">
-          <block>
-            <image lazy-load heightFix src="{{baseURL+item.product_picture}}" />
-          </block>
-          <view class="pro-info">
-            <h2 class="pro-title">{{item.product_name}}</h2>
-            <h3 class="pro-des">{{item.product_intro}}</h3>
-            <p class="pro-price">
-              <text>{{item.product_selling_price}}元</text>
-              <text class="del" wx:if="{{item.product_selling_price<item.product_price}}">{{item.product_price}}元</text>
-            </p>
-          </view>
+          <navigator url="{{'/pages/details/details?productID='+item.product_id}}" hover-class="none">
+            <block>
+              <image lazy-load heightFix src="{{baseURL+item.product_picture}}" />
+            </block>
+            <view class="pro-info">
+              <h2 class="pro-title">{{item.product_name}}</h2>
+              <h3 class="pro-des">{{item.product_intro}}</h3>
+              <p class="pro-price">
+                <text>{{item.product_selling_price}}元</text>
+                <text class="del" wx:if="{{item.product_selling_price<item.product_price}}">{{item.product_price}}元</text>
+              </p>
+            </view>
+          </navigator>
         </li>
       </ul>
     </view>

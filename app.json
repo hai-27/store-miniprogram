@@ -4,6 +4,7 @@
     "pages/goods/goods",
     "pages/shoppingCart/shoppingCart",
     "pages/mine/mine",
+    "pages/details/details",
     "pages/logs/logs"
   ],
   "window": {

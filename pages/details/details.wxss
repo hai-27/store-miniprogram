@@ -1,0 +1,5 @@
+/* pages/details/details.wxss */
+.carousel .product-img {
+  display: block;
+  margin: 0 auto;
+}
