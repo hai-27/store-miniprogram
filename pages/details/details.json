@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "i-tab-bar-item": "../../components/iview/tab-bar-item/index"
+  },
   "navigationBarTitleText": "商品详情"
 }

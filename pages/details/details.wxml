@@ -20,3 +20,17 @@
   </p>
 </view>
 <!-- 商品信息/ -->
+<view style="height:500px;background-color:#edece8;"></view>
+<!-- 底栏 -->
+<view class="bottom-bar">
+  <view class="shopping-cart">
+    <i-tab-bar-item key="remind" icon="publishgoods_fill" count="3" class="aaa"></i-tab-bar-item>
+  </view>
+  <view class="add-shopping-cart">
+    <text>加入购物车</text>
+  </view>
+  <view class="add-collect">
+    <text>喜欢</text>
+  </view>
+</view>
+<!-- 底栏/ -->
