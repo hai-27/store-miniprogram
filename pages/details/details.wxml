@@ -10,3 +10,13 @@
   </swiper>
 </view>
 <!-- 轮播图/ -->
+<!-- 商品信息 -->
+<view class="pro-info">
+  <h2 class="pro-title">{{productInfo.product_name}}</h2>
+  <h3 class="pro-des">{{productInfo.product_intro}}</h3>
+  <p class="pro-price">
+    <text>{{productInfo.product_selling_price}}元</text>
+    <text class="del" wx:if="{{productInfo.product_selling_price<productInfo.product_price}}">{{productInfo.product_price}}元</text>
+  </p>
+</view>
+<!-- 商品信息/ -->

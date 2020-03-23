@@ -13,7 +13,11 @@
   </i-tabs>
 </view>
 <!-- 标签栏/ -->
+<!-- 商品列表 -->
 <view>
   <my-list arr="{{product}}"></my-list>
 </view>
+<!-- 商品列表/ -->
+<!-- 页底提示 -->
 <i-load-more tip="暂无更多数据" loading="{{ false }}" wx:if="{{productTotal == product.length}}"/>
+<!-- 页底提示/ -->

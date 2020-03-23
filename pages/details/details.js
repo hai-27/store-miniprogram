@@ -11,6 +11,7 @@ Page({
   data: {
     baseURL,
     productID: '',
+    productInfo: "",
     productImages: ''
   },
 
@@ -18,17 +19,28 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: async function(options) {
-    const {productID} = options; // 接收路由传递的商品id
+    const {
+      productID
+    } = options; // 接收路由传递的商品id
     // 从后端获取需要的数据
+    // 商品数据
+    let product = await $ajax('product/getDetails', {
+      data: {
+        productID
+      }
+    });
+    // 商品图片
     let productImages = await $ajax('product/getDetailsPicture', {
       data: {
         productID
       }
-    })
+    });
     this.setData({
       productID,
-      productImages: productImages.ProductPicture
-    })
+      productImages: productImages.ProductPicture,
+      productInfo: product.Product[0]
+    });
+    console.log(this.data.productInfo)
   },
 
   /**
