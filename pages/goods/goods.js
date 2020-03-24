@@ -11,7 +11,7 @@ Page({
   data: {
     currentPage: 1,
     pageSize: 15,
-    current_scroll: 0,
+    current_scroll: -1,
     category: [],
     search: '',
     product: [],
@@ -60,7 +60,6 @@ Page({
         pageSize: this.data.pageSize
       }
     });
-    console.log(productTemp);
     const product = this.data.product.concat(productTemp.Product);
     this.setData({
       product,
@@ -73,7 +72,7 @@ Page({
    */
   onLoad: async function(options) {
     // 从后端获取需要的数据
-    this.getData(); // 获取商品数据
+    // this.getData(); // 获取商品数据
     let categoryRes = await $ajax('product/getCategory'); // 分类列表
 
     // 处理分类列表，添加“全部”
@@ -100,7 +99,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    // 从首页点击分类跳转过来
     // 获取存在globalData中的分类id
     let categoryId = getApp().globalData.categoryId;
     // 如果globalData中的分类id与当前页面显示的分类id不等于，重新加载数据
