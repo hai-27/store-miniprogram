@@ -11,8 +11,9 @@ Page({
   data: {
     baseURL,
     productID: '',
-    productInfo: "",
-    productImages: ''
+    productInfo: '',
+    productImages: '',
+    hotProduct: ''
   },
 
   /**
@@ -40,7 +41,17 @@ Page({
       productImages: productImages.ProductPicture,
       productInfo: product.Product[0]
     });
-    console.log(this.data.productInfo)
+    // 获取推荐商品信息
+    let hotProduct = await $ajax('product/getProductByCategory', {
+      data: {
+        categoryID: this.data.productInfo.category_id,
+        currentPage: 1,
+        pageSize: 10
+      }
+    });
+    this.setData({
+      hotProduct: hotProduct.Product
+    })
   },
 
   /**

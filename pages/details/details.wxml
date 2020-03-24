@@ -20,11 +20,22 @@
   </p>
 </view>
 <!-- 商品信息/ -->
-<view style="height:500px;background-color:#edece8;"></view>
+<!-- 用户购买信息 -->
+<view class="info-list">
+  <i-cell-group>
+    <i-cell label="送至" title="广州市 白云区" is-link></i-cell>
+    <i-cell label="已选" title="{{productInfo.product_name}}" is-link></i-cell>
+  </i-cell-group>
+</view>
+<!-- 用户购买信息/ -->
+<!-- 猜你喜欢 -->
+<my-list arr="{{hotProduct}}" titleName="猜你喜欢"></my-list>
+<!-- 猜你喜欢/ -->
 <!-- 底栏 -->
+<view style="height:50px;"></view>
 <view class="bottom-bar">
   <view class="shopping-cart">
-    <i-tab-bar-item key="remind" icon="publishgoods_fill" count="3" class="aaa"></i-tab-bar-item>
+    <i-tab-bar-item key="remind" icon="publishgoods_fill" count="3"></i-tab-bar-item>
   </view>
   <view class="add-shopping-cart">
     <text>加入购物车</text>
