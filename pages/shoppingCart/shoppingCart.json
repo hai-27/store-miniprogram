@@ -1,7 +1,6 @@
 {
   "usingComponents": {
     "i-card": "../../components/iview/card/index",
-    "i-input-number": "../../components/iview/input-number/index",
-    "i-radio": "../../components/iview/radio/index"
+    "i-input-number": "../../components/iview/input-number/index"
   }
 }

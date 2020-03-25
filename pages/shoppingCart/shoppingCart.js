@@ -16,10 +16,11 @@ Page({
       value1: detail.value
     })
   },
-  handleChange({ detail = {} }) {
+  handleChange() {
     this.setData({
-      checked: detail.current
+      checked: !this.data.checked
     });
+    console.log(this.data.checked)
   },
   /**
    * 生命周期函数--监听页面加载

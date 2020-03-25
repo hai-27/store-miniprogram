@@ -34,7 +34,7 @@
 .cart-tabbar .totalNum{
   float: left;
   font-size: 14px;
-  padding-left: 10px;
+  padding-left: 5px;
   vertical-align: middle;
 }
 .cart-tabbar .totalPrice{
