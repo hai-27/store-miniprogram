@@ -70,7 +70,7 @@
 					"id": 1,
 					"name": "pages/details/details",
 					"pathName": "pages/details/details",
-					"query": "productID=1",
+					"query": "productID=23",
 					"scene": null
 				}
 			]

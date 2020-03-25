@@ -63,7 +63,7 @@
 
 .list-main .pro-item .pro-info .pro-des {
   width: 100%;
-  height: 15px;
+  height: 14px;
   float: left;
   font-size: 12px;
   font-weight: 400;

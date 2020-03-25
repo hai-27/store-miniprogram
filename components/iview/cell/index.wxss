@@ -23,7 +23,7 @@
   box-sizing: border-box;
   border: 0 solid #e9eaec;
   border-bottom: 1px solid #e9eaec;
-  left: 15px;
+  /* left: 15px; */
   right: 0;
 }
 
@@ -45,8 +45,14 @@
 
 .i-cell-text {
   float: left;
+  width: 80%;
   line-height: 24px;
   font-size: 14px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 
 .i-cell-desc {
