@@ -1,2 +1,26 @@
 <!--pages/shoppingCart/shoppingCart.wxml-->
-<text>pages/shoppingCart/shoppingCart.wxml</text>
+<!-- 购物车主体 -->
+<i-card full title="卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题" extra="1299元" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
+  <i-radio slot="check" color="#ff6700" checked="{{checked}}" bindchange="handleChange"></i-radio>
+  <view slot="content">
+    <text class="total">小计：1299元</text>
+    <i-input-number class="input-number" value="{{ value1 }}" min="0" max="10" bindchange="handleChange1" />
+  </view>
+</i-card>
+<i-card full title="标题卡片标题卡片标题卡片标题卡片标题卡片标题" extra="1299元" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
+  <i-radio slot="check" color="#ff6700" checked="{{checked}}" bindchange="handleChange"></i-radio>
+  <view slot="content">
+    <text class="total">小计：1299元</text>
+    <i-input-number class="input-number" value="{{ value1 }}" min="0" max="10" bindchange="handleChange1" />
+  </view>
+</i-card>
+<!-- 购物车主体/ -->
+<!-- 底栏 -->
+<view style="height:50px;"></view>
+<view class="cart-tabbar">
+ <i-radio value="全选" color="#ff6700" checked="{{checked}}" bindchange="handleChange" class="check-box"></i-radio>
+ <text class="totalNum">已选: <text class="num">10</text>件</text>
+ <button class="btn">结算</button>
+ <text class="totalPrice">合计: <text class="num">10</text>元</text>
+</view>
+<!-- 底栏/ -->

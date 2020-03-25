@@ -1,0 +1,21 @@
+.i-radio-cell::after {
+  display: block;
+}
+
+.i-radio-radio-left {
+  float: left;
+}
+
+.i-radio-radio-right {
+  float: right;
+}
+
+.i-radio-radio {
+  overflow: hidden;
+  
+  vertical-align: middle;
+}
+
+.i-radio-title {
+  display: inline-block;
+}

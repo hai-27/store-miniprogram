@@ -1,1 +1,57 @@
 /* pages/shoppingCart/shoppingCart.wxss */
+
+.total {
+  float: left;
+  color: #ff6700;
+}
+
+.input-number {
+  float: right;
+}
+
+.cart-tabbar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 50px;
+  line-height: 50px;
+  font-size: 12px;
+  color: #8a8a8a;
+  width: 100%;
+  z-index: 9999;
+  padding-left: 5px;
+  border-top: 1px solid #dddee1;
+}
+
+.cart-tabbar .check-box {
+  float: left;
+}
+
+.cart-tabbar .num{
+  font-size: 16px;
+  color: #ff6700;
+}
+.cart-tabbar .totalNum{
+  float: left;
+  font-size: 14px;
+  padding-left: 10px;
+  vertical-align: middle;
+}
+.cart-tabbar .totalPrice{
+  float: right;
+  font-size: 14px;
+  vertical-align: middle;
+  padding-right: 10px;
+}
+.cart-tabbar .btn {
+  float: right;
+  width: 100px;
+  height: 48px;
+  line-height: 48px;
+  padding: 0;
+  color: #fff;
+  font-weight: 500;
+  background-color: #ff6700;
+  border-radius: 30px;
+  margin: 1px 10px 1px 0;
+}

@@ -1,0 +1,98 @@
+.i-card {
+  margin: 0 16px 0 0;
+  font-size: 14px;
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+  border-bottom: 1px solid #dddee1;
+  border-radius: 5px;
+}
+
+.i-card-full {
+  margin: 0;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+}
+
+.i-card-header {
+  display: flex;
+  padding: 6px 10px 0 5px;
+  align-items: center;
+}
+
+.i-card-header-content {
+  flex: 4;
+  text-align: left;
+  overflow: hidden;
+}
+.i-card-header-content .title {
+  float: left;
+  display: inline-block;
+  width:70%;
+  padding-left:5px; 
+  line-height: 21px;
+  vertical-align: middle;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.i-card-header-thumb {
+  float: left;
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  background-size: cover;
+  vertical-align: middle;
+}
+
+.i-card-header-title {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 14px;
+  color: #1c2438;
+}
+
+.i-card-header-extra {
+  flex: 1;
+  color: #ff6700;
+  text-align: right;
+  font-size: 14px;
+}
+
+.i-card-body {
+  margin: 5px 10px 5px 33px;
+  color: #495060;
+  font-size: 14px;
+  overflow: hidden;
+}
+
+.i-card-body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+  pointer-events: none;
+  box-sizing: border-box;
+  border: 0 solid #e9eaec;
+  border-top-width: 1px;
+}
+
+.check-box{
+  float: left;
+  line-height: 94px;
+  padding: 0 5px;
+  width: 20px;
+  height:20px;
+}
