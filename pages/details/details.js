@@ -1,7 +1,9 @@
 // pages/details/details.js
 import create from '../../utils/create';
 import store from '../../store/index';
-
+const {
+  $Message
+} = require('../../components/iview/base/index');
 const {
   baseURL,
   $ajax
@@ -22,7 +24,7 @@ create.Page(store, {
   },
   computed: {
     // 购物车商品总数量
-    getNum(){
+    getNum() {
       return store.getNum();
     }
   },
@@ -33,31 +35,42 @@ create.Page(store, {
       // 先登录
       return;
     }
-    let shoppingCart = await $ajax('user/shoppingCart/addShoppingCart', {
+    let addShoppingCartRes = await $ajax('user/shoppingCart/addShoppingCart', {
       data: {
         user_id: getApp().globalData.userId,
         product_id: this.data.productID
       }
     });
-    console.log(shoppingCart)
-    switch (shoppingCart.code) {
+    switch (addShoppingCartRes.code) {
       case "001":
         // 新加入购物车成功
-        store.unshiftShoppingCart(shoppingCart.shoppingCartData[0]);
-        // this.notifySucceed(res.data.msg);
+        store.unshiftShoppingCart(addShoppingCartRes.shoppingCartData[0]);
+        $Message({
+          content: addShoppingCartRes.msg,
+          type: 'success'
+        });
         break;
       case "002":
         // 该商品已经在购物车，数量+1
         store.addShoppingCartNum(this.data.productID);
-        // this.notifySucceed(res.data.msg);
+        $Message({
+          content: addShoppingCartRes.msg,
+          type: 'success'
+        });
         break;
       case "003":
         // 商品数量达到限购数量
         // this.dis = true;
-        // this.notifyError(res.data.msg);
+        $Message({
+          content: addShoppingCartRes.msg,
+          type: 'warning'
+        });
         break;
       default:
-        // this.notifyError(res.data.msg);
+        $Message({
+          content: addShoppingCartRes.msg,
+          type: 'error'
+        });
     }
   },
 

@@ -15,7 +15,6 @@ shoppingCart = {
 
 export const getters = {
   getShoppingCart() {
-    console.log(this)
     // 获取购物车状态
     return this.data.shoppingCart;
   },

@@ -1,4 +1,5 @@
 <!--pages/details/details.wxml-->
+<i-message id="message" />
 <!-- 轮播图 -->
 <view class="carousel">
   <swiper autoplay circular indicator-dots indicator-color="#edece8" indicator-active-color="#8a8a8a" interval="3000" duration="1000" style="height:250px;">

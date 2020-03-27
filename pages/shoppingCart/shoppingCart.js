@@ -3,6 +3,9 @@
 import create from '../../utils/create';
 import store from '../../store/index';
 const {
+  $Message
+} = require('../../components/iview/base/index');
+const {
   baseURL,
   $ajax
 } = getApp().globalData;
@@ -22,40 +25,65 @@ create.Page(store, {
       return store.getShoppingCart();
     },
     // 判断是否全选
-    getIsAllCheck(){
+    getIsAllCheck() {
       return store.getIsAllCheck();
     },
     // 获取购物车勾选的商品数量
-    getCheckNum(){
+    getCheckNum() {
       return store.getCheckNum();
     },
-    getTotalPrice(){
+    getTotalPrice() {
       return store.getTotalPrice();
     }
   },
   /**
    * 修改商品数量
    */
-  handleChangeNum(e) {
-    console.log(store)
-    store.updateShoppingCart({
-      key: e.target.dataset.key,
-      prop: "num",
-      val: e.detail.value
-    })
+  async handleChangeNum(e) {
+    // 判断数量是否发生变化
+    if (e.detail.value == e.target.dataset.value){
+      return;
+    }
+    // 当修改数量时，默认勾选
+    this.handleChangeChecked(e);
+    // 向后端发起更新购物车的数据库信息请求
+    let updateShoppingCartRes = await $ajax('user/shoppingCart/updateShoppingCart', {
+      data: {
+        user_id: getApp().globalData.userId,
+        product_id: e.target.dataset.productid,
+        num: e.detail.value
+      }
+    });
+
+    switch (updateShoppingCartRes.code) {
+      case "001":
+        // 001代表更新成功
+        // 更新状态
+        store.updateShoppingCart({
+          key: e.target.dataset.key,
+          prop: "num",
+          val: e.detail.value
+        });
+        break;
+      default:
+        // 提示更新失败信息
+        $Message({
+          content: updateShoppingCartRes.msg,
+          type: 'error'
+        });
+    }
   },
   /**
    * 修改商品勾选状态
    */
   handleChangeChecked(e) {
-    console.log(e)
     store.updateShoppingCart({
       key: e.target.dataset.key,
       prop: "check",
       val: !e.target.dataset.value
-    })
+    });
   },
-  handleChangeCheckAll(e){
+  handleChangeCheckAll(e) {
     store.checkAll(!e.target.dataset.value)
   },
   /**
