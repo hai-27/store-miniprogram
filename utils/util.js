@@ -24,7 +24,8 @@ const $ajax = (api, params = {}) => {
     });
     wx.request({
       header: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        Cookie: wx.getStorageSync("cookie")
       },
       url,
       method: params.type ? params.type : "post",
@@ -36,8 +37,16 @@ const $ajax = (api, params = {}) => {
         console.log(error);
       },
       complete: function(res) {
+        // 隐藏loading图标
         wx.hideLoading();
-        // console.log(res)
+
+        // 把cookie存在本地
+        if (res.header['Set-Cookie']) {
+          const reg = /koa\S*;/g
+          const tempCookie = res.header['Set-Cookie'].match(reg)
+          const cookie = tempCookie[0] + ' ' + tempCookie[1];
+          wx.setStorageSync('cookie', cookie);
+        }
       }
     })
   });

@@ -1,4 +1,6 @@
 //app.js
+// import create from '/utils/create';
+import store from '/store/index';
 let {
   baseURL,
   $ajax
@@ -12,10 +14,29 @@ App({
 
     // 登录
     wx.login({
-      success: res => {
+      success: async res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        let loginRes = await $ajax('users/miniProgramLogin', {
+          data: {
+            code: res.code
+          }
+        });
+        // 登录成功
+        if (loginRes.code === '001') {
+          console.log("登录成功")
+          this.globalData.userId = loginRes.userId;
+          // 获取购物车信息
+          if (this.globalData.userId) {
+            let shoppingCart = await $ajax('user/shoppingCart/getShoppingCart', {
+              data: {
+                user_id: this.globalData.userId
+              }
+            });
+            store.data.shoppingCart = shoppingCart.shoppingCartData;
+          }
+        }
       }
-    })
+    });
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -39,6 +60,7 @@ App({
   },
   globalData: {
     userInfo: null,
+    userId: '',
     baseURL,
     $ajax,
     categoryId: 0

@@ -36,10 +36,10 @@
 <view class="bottom-bar">
   <navigator open-type="switchTab" url="/pages/shoppingCart/shoppingCart" hover-class="none">
     <view class="shopping-cart">
-      <i-tab-bar-item key="remind" icon="publishgoods_fill" count="3"></i-tab-bar-item>
+      <i-tab-bar-item key="remind" icon="publishgoods_fill" count="{{getNum}}"></i-tab-bar-item>
     </view>
   </navigator>
-  <view class="add-shopping-cart">
+  <view class="add-shopping-cart" bindtap="addShoppingCart">
     <text>加入购物车</text>
   </view>
   <view class="add-collect">

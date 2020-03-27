@@ -1,10 +1,15 @@
 // pages/details/details.js
+import create from '../../utils/create';
+import store from '../../store/index';
+
 const {
   baseURL,
   $ajax
 } = getApp().globalData;
-Page({
 
+create.Page(store, {
+
+  use: ['shoppingCart'],
   /**
    * 页面的初始数据
    */
@@ -14,6 +19,46 @@ Page({
     productInfo: '',
     productImages: '',
     hotProduct: ''
+  },
+  computed: {
+    // 购物车商品总数量
+    getNum(){
+      return store.getNum();
+    }
+  },
+  // 加入购物车
+  async addShoppingCart() {
+    // 判断是否登录,没有登录则显示登录组件
+    if (!getApp().globalData.userId) {
+      // 先登录
+      return;
+    }
+    let shoppingCart = await $ajax('user/shoppingCart/addShoppingCart', {
+      data: {
+        user_id: getApp().globalData.userId,
+        product_id: this.data.productID
+      }
+    });
+    console.log(shoppingCart)
+    switch (shoppingCart.code) {
+      case "001":
+        // 新加入购物车成功
+        store.unshiftShoppingCart(shoppingCart.shoppingCartData[0]);
+        // this.notifySucceed(res.data.msg);
+        break;
+      case "002":
+        // 该商品已经在购物车，数量+1
+        store.addShoppingCartNum(this.data.productID);
+        // this.notifySucceed(res.data.msg);
+        break;
+      case "003":
+        // 商品数量达到限购数量
+        // this.dis = true;
+        // this.notifyError(res.data.msg);
+        break;
+      default:
+        // this.notifyError(res.data.msg);
+    }
   },
 
   /**

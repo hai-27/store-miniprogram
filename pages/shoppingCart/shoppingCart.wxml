@@ -1,26 +1,21 @@
 <!--pages/shoppingCart/shoppingCart.wxml-->
 <!-- 购物车主体 -->
-<i-card full title="卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题卡片标题" extra="1299元" thumb="http://47.115.85.237:3000/public/imgs/phone/Redmi-k30-5G.png">
-  <radio slot="check" checked="{{checked}}" color="#ff6700" bindtap="handleChange" />
-  <view slot="content">
-    <text class="total">小计：1299元</text>
-    <i-input-number class="input-number" value="{{ value1 }}" min="0" max="10" bindchange="handleChange1" />
-  </view>
-</i-card>
-<i-card full title="标题卡片标题卡片标题卡片标题卡片标题卡片标题" extra="1299元" thumb="http://47.115.85.237:3000/public/imgs/phone/Redmi-k30-5G.png">
-  <radio slot="check" checked="{{checked}}" color="#ff6700" bindtap="handleChange" />
-  <view slot="content">
-    <text class="total">小计：1299元</text>
-    <i-input-number class="input-number" value="{{ value1 }}" min="0" max="10" bindchange="handleChange1" />
-  </view>
-</i-card>
+<block wx:for="{{getShoppingCart}}" wx:key="{{item.id}}">
+  <i-card full title="{{item.productName}}" extra="{{item.price+'元'}}" thumb="{{baseURL+item.productImg}}">
+    <radio slot="check" checked="{{item.check}}" data-key="{{index}}" data-value="{{item.check}}" color="#ff6700" bindtap="handleChangeChecked" />
+    <view slot="content">
+      <text class="total">小计：{{item.num*item.price}}元</text>
+      <i-input-number class="input-number" value="{{ item.num }}" data-key="{{index}}" min="1" max="{{item.maxNum}}" bindchange="handleChangeNum" />
+    </view>
+  </i-card>
+</block>
 <!-- 购物车主体/ -->
 <!-- 底栏 -->
 <view style="height:50px;"></view>
 <view class="cart-tabbar">
-  <radio value="全选" checked="{{checked}}" color="{{checked?'#ff6700':''}}" bindtap="handleChange" class="check-box" />
-  <text class="totalNum">已选: <text class="num">10</text>件</text>
+  <radio value="全选" checked="{{getIsAllCheck}}" data-value="{{getIsAllCheck}}" color="#ff6700" bindtap="handleChangeCheckAll" class="check-box" />
+  <text class="totalNum">已选: <text class="num">{{getCheckNum}}</text>件</text>
   <button class="btn">结算</button>
-  <text class="totalPrice">合计: <text class="num">10</text>元</text>
+  <text class="totalPrice">合计: <text class="num">{{getTotalPrice}}</text>元</text>
 </view>
 <!-- 底栏/ -->

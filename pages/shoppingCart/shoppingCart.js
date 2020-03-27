@@ -1,31 +1,67 @@
 // pages/shoppingCart/shoppingCart.js
-Page({
 
+import create from '../../utils/create';
+import store from '../../store/index';
+const {
+  baseURL,
+  $ajax
+} = getApp().globalData;
+
+create.Page(store, {
+
+  use: ['shoppingCart'],
   /**
    * 页面的初始数据
    */
   data: {
-    value1: 1,
-    checked: false
+    baseURL
   },
-
-  handleChange1({
-    detail
-  }) {
-    this.setData({
-      value1: detail.value
+  computed: {
+    // 获取购物车状态
+    getShoppingCart() {
+      return store.getShoppingCart();
+    },
+    // 判断是否全选
+    getIsAllCheck(){
+      return store.getIsAllCheck();
+    },
+    // 获取购物车勾选的商品数量
+    getCheckNum(){
+      return store.getCheckNum();
+    },
+    getTotalPrice(){
+      return store.getTotalPrice();
+    }
+  },
+  /**
+   * 修改商品数量
+   */
+  handleChangeNum(e) {
+    console.log(store)
+    store.updateShoppingCart({
+      key: e.target.dataset.key,
+      prop: "num",
+      val: e.detail.value
     })
   },
-  handleChange() {
-    this.setData({
-      checked: !this.data.checked
-    });
-    console.log(this.data.checked)
+  /**
+   * 修改商品勾选状态
+   */
+  handleChangeChecked(e) {
+    console.log(e)
+    store.updateShoppingCart({
+      key: e.target.dataset.key,
+      prop: "check",
+      val: !e.target.dataset.value
+    })
+  },
+  handleChangeCheckAll(e){
+    store.checkAll(!e.target.dataset.value)
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: async function(options) {
 
   },
 

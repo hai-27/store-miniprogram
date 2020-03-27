@@ -21,6 +21,7 @@
   z-index: 9999;
   padding-left: 5px;
   border-top: 1px solid #dddee1;
+  background-color: #fff;
 }
 
 .cart-tabbar .check-box {
