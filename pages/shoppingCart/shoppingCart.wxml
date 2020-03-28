@@ -2,7 +2,7 @@
 <i-message id="message" />
 <!-- 购物车主体 -->
 <block wx:for="{{getShoppingCart}}" wx:key="{{item.id}}">
-  <i-card full title="{{item.productName}}" extra="{{item.price+'元'}}" thumb="{{baseURL+item.productImg}}">
+  <i-card full checked title="{{item.productName}}" extra="{{item.price+'元'}}" thumb="{{baseURL+item.productImg}}">
     <radio slot="check" checked="{{item.check}}" data-key="{{index}}" data-checked="{{item.check}}" color="#ff6700" bindtap="handleChangeChecked" />
     <view slot="content">
       <text class="total">小计：{{item.num*item.price}}元</text>
@@ -23,7 +23,7 @@
 <view class="cart-tabbar">
   <radio value="全选" checked="{{getIsAllCheck}}" data-value="{{getIsAllCheck}}" color="#ff6700" bindtap="handleChangeCheckAll" class="check-box" />
   <text class="totalNum">已选: <text class="num">{{getCheckNum}}</text>件</text>
-  <button class="btn">结算</button>
+  <button class="btn" bindtap="toPay">结算</button>
   <text class="totalPrice">合计: <text class="num">{{getTotalPrice}}</text>元</text>
 </view>
 <!-- 底栏/ -->

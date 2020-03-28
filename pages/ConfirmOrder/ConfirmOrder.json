@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "i-cell": "../../components/iview/cell/index",
+    "i-card": "../../components/iview/card/index"
+  },
+  "navigationBarTitleText": "订单结算"
+}

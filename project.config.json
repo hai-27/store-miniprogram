@@ -79,6 +79,12 @@
 					"pathName": "pages/shoppingCart/shoppingCart",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "确认订单",
+					"pathName": "pages/ConfirmOrder/ConfirmOrder",
+					"scene": null
 				}
 			]
 		}

@@ -21,6 +21,10 @@ Component({
     extra: {
       type: String,
       value: ''
+    },
+    checked:{
+      type: Boolean,
+      value: false
     }
   }
 });

@@ -1,11 +1,14 @@
 <view class="i-class i-card {{ full ? 'i-card-full' : '' }}">
-  <view class="check-box">
+  <view class="check-box" wx:if="{{checked}}">
     <slot name="check"></slot>
   </view>
   <view class="i-class i-card-header">
     <view class="i-card-header-content">
       <image class="i-card-header-thumb" src="{{ thumb }}" mode="aspectFit" wx:if="{{ thumb }}" />
       <text class="title">{{ title }}</text>
+    </view>
+    <view style="color:#8d8d8d">
+      <slot name="num"></slot>
     </view>
     <view class="i-card-header-extra" wx:if="{{ extra }}">{{ extra }}</view>
   </view>

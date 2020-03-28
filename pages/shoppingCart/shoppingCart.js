@@ -120,6 +120,21 @@ create.Page(store, {
     }
   },
   /**
+   * 去结算
+   */
+  toPay(){
+    if (!this.data.getCheckNum){
+      $Message({
+        content: '请先勾选商品再结算！',
+        type: 'error'
+      });
+      return;
+    }
+    wx.navigateTo({
+      url: '/pages/ConfirmOrder/ConfirmOrder'
+    })
+  },
+  /**
    * 生命周期函数--监听页面加载
    */
   onLoad: async function(options) {

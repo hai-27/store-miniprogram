@@ -1,0 +1,27 @@
+<!--pages/ConfirmOrder/ConfirmOrder.wxml-->
+
+<i-cell title="购物清单" class="space"></i-cell>
+<block wx:for="{{getCheckGoods}}" wx:key="{{item.id}}">
+  <i-card full title="{{item.productName}}" extra="{{item.price+'元'}}" thumb="{{baseURL+item.productImg}}">
+    <text slot="num">{{item.num}}x</text>
+  </i-card>
+</block>
+
+<i-cell title="收货地址" class="space"></i-cell>
+<i-cell label="姓名" title="陈家海" is-link></i-cell>
+<i-cell label="电话" title="135***8623" is-link></i-cell>
+<i-cell label="送至" title="广州市 白云区" is-link></i-cell>
+
+<i-cell title="发票信息" class="space"></i-cell>
+<i-cell label="电子发票" title="个人" is-link></i-cell>
+
+<i-cell title="优惠券" class="space"></i-cell>
+<i-cell label="优惠券" title="未使用优惠券" is-link></i-cell>
+
+<view class="space"></view>
+<i-cell title="订单金额" value="{{getTotalPrice+'元'}}"></i-cell>
+<i-cell title="商品总计" value="{{getTotalPrice+'元'}}"></i-cell>
+<i-cell title="运费" value="{{'0'+'元'}}"></i-cell>
+
+<view style="height:50px;" class="space"></view>
+<view class="bottom-bar">使用微信支付</view>

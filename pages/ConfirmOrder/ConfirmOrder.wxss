@@ -1,0 +1,22 @@
+page{
+  background-color: #ececec;
+}
+.space{
+  display: block;
+  margin-top: 10px;
+}
+
+.bottom-bar{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+  width: 100%;
+  z-index: 9999;
+  padding-left: 5px;
+  background-color: #17a916;
+}
