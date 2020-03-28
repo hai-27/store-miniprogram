@@ -2,6 +2,7 @@
   "usingComponents": {
     "i-card": "../../components/iview/card/index",
     "i-input-number": "../../components/iview/input-number/index",
-    "i-message": "../../components/iview/message/index"
+    "i-message": "../../components/iview/message/index",
+    "i-icon": "../../components/iview/icon/index"
   }
 }

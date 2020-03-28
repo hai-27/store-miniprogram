@@ -7,8 +7,15 @@
     <view slot="content">
       <text class="total">小计：{{item.num*item.price}}元</text>
       <i-input-number class="input-number" value="{{ item.num }}" data-key="{{index}}" data-productId="{{item.productID}}" data-value="{{item.num}}" min="1" max="{{item.maxNum}}" bindchange="handleChangeNum" />
+      <i-icon class="delete" size="18" color="#8a8a8a" type="trash" bindtap="bindDelete" data-productId="{{item.productID}}" />
     </view>
   </i-card>
+</block>
+<block wx:if="{{getShoppingCart.length == 0}}">
+  <view class="cart-empty">
+    <image src="../../static/imgs/cart-empty.jpg"></image>
+    <text>您的购物车还是空的哦！</text>
+  </view>
 </block>
 <!-- 购物车主体/ -->
 <!-- 底栏 -->

@@ -41,7 +41,7 @@ create.Page(store, {
    */
   async handleChangeNum(e) {
     // 判断数量是否发生变化
-    if (e.detail.value == e.target.dataset.value){
+    if (e.detail.value == e.target.dataset.value) {
       return;
     }
     // 当修改数量时，默认勾选
@@ -83,8 +83,41 @@ create.Page(store, {
       val: !e.target.dataset.value
     });
   },
+  /**
+   * 全选按钮
+   */
   handleChangeCheckAll(e) {
     store.checkAll(!e.target.dataset.value)
+  },
+  /**
+   * 删除购物车商品
+   */
+  async bindDelete(e) {
+    // 向后端发起删除购物车的数据库信息请求
+    let deleteShoppingCartRes = await $ajax('user/shoppingCart/deleteShoppingCart', {
+      data: {
+        user_id: getApp().globalData.userId,
+        product_id: e.target.dataset.productid
+      }
+    });
+    switch (deleteShoppingCartRes.code) {
+      case "001":
+        // 001删除成功
+        // 更新状态
+        store.deleteShoppingCart(e.target.dataset.productid);
+        // 提示删除成功信息
+        $Message({
+          content: deleteShoppingCartRes.msg,
+          type: 'success'
+        });
+        break;
+      default:
+        // 提示删除失败信息
+        $Message({
+          content: deleteShoppingCartRes.msg,
+          type: 'error'
+        });
+    }
   },
   /**
    * 生命周期函数--监听页面加载

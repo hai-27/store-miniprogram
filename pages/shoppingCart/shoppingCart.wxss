@@ -9,6 +9,11 @@
   float: right;
 }
 
+.delete {
+  float: right;
+  margin-right: 5px;
+}
+
 .cart-tabbar {
   position: fixed;
   left: 0;
@@ -28,22 +33,25 @@
   float: left;
 }
 
-.cart-tabbar .num{
+.cart-tabbar .num {
   font-size: 16px;
   color: #ff6700;
 }
-.cart-tabbar .totalNum{
+
+.cart-tabbar .totalNum {
   float: left;
   font-size: 14px;
   padding-left: 5px;
   vertical-align: middle;
 }
-.cart-tabbar .totalPrice{
+
+.cart-tabbar .totalPrice {
   float: right;
   font-size: 14px;
   vertical-align: middle;
   padding-right: 10px;
 }
+
 .cart-tabbar .btn {
   float: right;
   width: 100px;
@@ -55,4 +63,30 @@
   background-color: #ff6700;
   border-radius: 30px;
   margin: 1px 10px 1px 0;
+}
+
+.cart-empty {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  background-color: #f7f7f7;
+}
+
+.cart-empty image {
+  display: block;
+  margin: 0 auto;
+  padding-top: 50px;
+  width: 147px;
+  height: 136px;
+}
+
+.cart-empty text {
+  display: block;
+  width: 100%;
+  font-weight: 600;
+  text-align: center;
+  color: #b0b0b0;
+  padding-top: 20px;
 }

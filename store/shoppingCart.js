@@ -30,6 +30,10 @@ export const getters = {
   getIsAllCheck() {
     // 判断是否全选
     let isAllCheck = true;
+    if (this.data.shoppingCart.length==0){
+      isAllCheck = false;
+      return isAllCheck;
+    }
     for (let i = 0; i < this.data.shoppingCart.length; i++) {
       const temp = this.data.shoppingCart[i];
       // 只要有一个商品没有勾选立即return false;
@@ -110,11 +114,13 @@ export const actions = {
       }
     }
   },
-  deleteShoppingCart(id) {
+  deleteShoppingCart(productID) {
+    console.log(productID)
     // 根据购物车id删除购物车商品
     for (let i = 0; i < this.data.shoppingCart.length; i++) {
       const temp = this.data.shoppingCart[i];
-      if (temp.id == id) {
+      if (temp.productID == productID) {
+        console.log("说出来")
         this.data.shoppingCart.splice(i, 1);
       }
     }
