@@ -40,16 +40,28 @@
 
 .cart-tabbar .totalNum {
   float: left;
+  width: 80px;
   font-size: 14px;
-  padding-left: 5px;
   vertical-align: middle;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 
 .cart-tabbar .totalPrice {
   float: right;
+  width: calc(100% - 225px);
   font-size: 14px;
   vertical-align: middle;
-  padding-right: 10px;
+  padding-right: 5px;
+  text-align: right;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 
 .cart-tabbar .btn {

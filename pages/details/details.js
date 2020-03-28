@@ -20,7 +20,8 @@ create.Page(store, {
     productID: '',
     productInfo: '',
     productImages: '',
-    hotProduct: ''
+    hotProduct: '',
+    full: false
   },
   computed: {
     // 购物车商品总数量
@@ -35,6 +36,15 @@ create.Page(store, {
       // 先登录
       return;
     }
+    // 如果达到限购数量不继续执行
+    if (this.data.full){
+      $Message({
+        content: "加购数量达到限购数量",
+        type: 'warning'
+      });
+      return;
+    }
+    // 向后端发起加入购物车的请求
     let addShoppingCartRes = await $ajax('user/shoppingCart/addShoppingCart', {
       data: {
         user_id: getApp().globalData.userId,
@@ -60,7 +70,7 @@ create.Page(store, {
         break;
       case "003":
         // 商品数量达到限购数量
-        // this.dis = true;
+        this.data.full = true;
         $Message({
           content: addShoppingCartRes.msg,
           type: 'warning'

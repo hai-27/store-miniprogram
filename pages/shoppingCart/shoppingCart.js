@@ -80,7 +80,7 @@ create.Page(store, {
     store.updateShoppingCart({
       key: e.target.dataset.key,
       prop: "check",
-      val: !e.target.dataset.value
+      val: !e.target.dataset.checked
     });
   },
   /**

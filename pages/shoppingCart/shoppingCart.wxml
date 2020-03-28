@@ -3,7 +3,7 @@
 <!-- 购物车主体 -->
 <block wx:for="{{getShoppingCart}}" wx:key="{{item.id}}">
   <i-card full title="{{item.productName}}" extra="{{item.price+'元'}}" thumb="{{baseURL+item.productImg}}">
-    <radio slot="check" checked="{{item.check}}" data-key="{{index}}" data-value="{{item.check}}" color="#ff6700" bindtap="handleChangeChecked" />
+    <radio slot="check" checked="{{item.check}}" data-key="{{index}}" data-checked="{{item.check}}" color="#ff6700" bindtap="handleChangeChecked" />
     <view slot="content">
       <text class="total">小计：{{item.num*item.price}}元</text>
       <i-input-number class="input-number" value="{{ item.num }}" data-key="{{index}}" data-productId="{{item.productID}}" data-value="{{item.num}}" min="1" max="{{item.maxNum}}" bindchange="handleChangeNum" />
