@@ -5,7 +5,8 @@
     "pages/shoppingCart/shoppingCart",
     "pages/mine/mine",
     "pages/details/details",
-    "pages/ConfirmOrder/ConfirmOrder",
+    "pages/confirmOrder/confirmOrder",
+    "pages/orders/orders",
     "pages/logs/logs"
   ],
   "window": {

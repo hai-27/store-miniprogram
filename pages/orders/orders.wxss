@@ -1,0 +1,8 @@
+/* pages/orders/orders.wxss */
+page{
+  background-color: #ececec;
+}
+.space{
+  display: block;
+  margin-top: 10px;
+}

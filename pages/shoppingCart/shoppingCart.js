@@ -131,7 +131,7 @@ create.Page(store, {
       return;
     }
     wx.navigateTo({
-      url: '/pages/ConfirmOrder/ConfirmOrder'
+      url: '/pages/confirmOrder/confirmOrder'
     })
   },
   /**

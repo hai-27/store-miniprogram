@@ -1,0 +1,14 @@
+<!--pages/orders/orders.wxml-->
+<i-message id="message" />
+<block wx:for="{{orders}}" wx:for-item="order" wx:key="index">
+  <i-cell title="购物清单" class="space"></i-cell>
+  <block wx:for="{{order}}" wx:key="id">
+    <i-card full title="{{item.productName}}" extra="{{item.product_price+'元'}}" thumb="{{baseURL+item.product_picture}}">
+      <text slot="num">{{item.product_num}}x</text>
+    </i-card>
+  </block>
+  <i-cell title="订单金额" value="{{total[index]+'元'}}"></i-cell>
+  <i-cell label="订单编号" title="{{order[0].order_id}}" is-link></i-cell>
+  <i-cell label="订单时间" title="{{order[0].order_time}}"></i-cell>
+</block>
+<view style="height:10px;"></view>

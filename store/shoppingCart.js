@@ -83,7 +83,7 @@ export const getters = {
 export const actions = {
   unshiftShoppingCart(data) {
     // 添加购物车
-    // 用于在商品详情页点击添加购物车,后台添加成功后，更新vuex状态
+    // 用于在商品详情页点击添加购物车,后台添加成功后，更新状态
     this.data.shoppingCart.unshift(data);
   },
   updateShoppingCart(payload) {
@@ -104,7 +104,7 @@ export const actions = {
   },
   addShoppingCartNum(productID) {
     // 增加购物车商品数量
-    // 用于在商品详情页点击添加购物车,后台返回002，“该商品已在购物车，数量 +1”，更新vuex的商品数量
+    // 用于在商品详情页点击添加购物车,后台返回002，“该商品已在购物车，数量 +1”，更新商品数量
     for (let i = 0; i < this.data.shoppingCart.length; i++) {
       const temp = this.data.shoppingCart[i];
       if (temp.productID == productID) {
@@ -115,7 +115,6 @@ export const actions = {
     }
   },
   deleteShoppingCart(productID) {
-    console.log(productID)
     // 根据购物车id删除购物车商品
     for (let i = 0; i < this.data.shoppingCart.length; i++) {
       const temp = this.data.shoppingCart[i];

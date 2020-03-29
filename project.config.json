@@ -81,9 +81,24 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 3,
 					"name": "确认订单",
-					"pathName": "pages/ConfirmOrder/ConfirmOrder",
+					"pathName": "pages/confirmOrder/confirmOrder",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "订单",
+					"pathName": "pages/orders/orders",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "我的",
+					"pathName": "pages/mine/mine",
+					"query": "",
 					"scene": null
 				}
 			]

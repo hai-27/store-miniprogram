@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "i-cell": "../../components/iview/cell/index",
+    "i-card": "../../components/iview/card/index",
+    "i-message": "../../components/iview/message/index"
+  },
+  "navigationBarTitleText": "我的订单"
+}
