@@ -3,7 +3,7 @@
 <!-- 轮播图 -->
 <view class="carousel">
   <swiper autoplay circular indicator-dots indicator-color="#edece8" indicator-active-color="#8a8a8a" interval="3000" duration="1000" style="height:250px;">
-    <block wx:for="{{productImages}}" wx:key="{{item.id}}">
+    <block wx:for="{{productImages}}" wx:key="id">
       <swiper-item>
         <image src="{{baseURL+item.product_picture}}" class="product-img"></image>
       </swiper-item>

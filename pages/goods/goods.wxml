@@ -7,7 +7,7 @@
 <!-- 标签栏 -->
 <view>
   <i-tabs current="{{ current_scroll }}" scroll bindchange="handleChangeScroll">
-    <block wx:for="{{category}}" wx:key="{{item.category_id}}">
+    <block wx:for="{{category}}" wx:key="category_id">
       <i-tab key="{{item.category_id}}" title="{{item.category_name}}"></i-tab>
     </block>
   </i-tabs>

@@ -3,7 +3,7 @@
     <view class="list-main">
       <view class="list-title" wx:if="{{titleName}}">{{titleName}}</view>
       <ul>
-        <li wx:for="{{arr}}" wx:key="{{item.product_id}}" class="pro-item">
+        <li wx:for="{{arr}}" wx:key="product_id" class="pro-item">
           <navigator url="{{'/pages/details/details?productID='+item.product_id}}" hover-class="none">
             <block>
               <image lazy-load heightFix src="{{baseURL+item.product_picture}}" />

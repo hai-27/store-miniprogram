@@ -1,7 +1,7 @@
 <!--pages/shoppingCart/shoppingCart.wxml-->
 <i-message id="message" />
 <!-- 购物车主体 -->
-<block wx:for="{{getShoppingCart}}" wx:key="{{item.id}}">
+<block wx:for="{{getShoppingCart}}" wx:key="id">
   <i-card full checked title="{{item.productName}}" extra="{{item.price+'元'}}" thumb="{{baseURL+item.productImg}}">
     <radio slot="check" checked="{{item.check}}" data-key="{{index}}" data-checked="{{item.check}}" color="#ff6700" bindtap="handleChangeChecked" />
     <view slot="content">

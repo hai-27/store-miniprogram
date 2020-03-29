@@ -2,7 +2,7 @@
 <i-message id="message" />
 
 <i-cell title="购物清单" class="space"></i-cell>
-<block wx:for="{{getCheckGoods}}" wx:key="{{item.id}}">
+<block wx:for="{{getCheckGoods}}" wx:key="id">
   <i-card full title="{{item.productName}}" extra="{{item.price+'元'}}" thumb="{{baseURL+item.productImg}}">
     <text slot="num">{{item.num}}x</text>
   </i-card>

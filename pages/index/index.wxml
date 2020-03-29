@@ -2,7 +2,7 @@
 <!-- 轮播图 -->
 <view>
   <swiper autoplay circular interval="3000" duration="1000" style="height:180px">
-    <block wx:for="{{carousel}}" wx:key="{{item.carousel_id}}">
+    <block wx:for="{{carousel}}" wx:key="carousel_id">
       <swiper-item>
         <image src="{{baseURL+item.imgPath}}" style="width:100%;height:180px;"></image>
       </swiper-item>
@@ -12,8 +12,8 @@
 <!-- 轮播图/ -->
 <!-- 分类列表 -->
 <view class="category-list">
-  <i-grid i-class="grid" wx:for="{{category}}" wx:for-item="temp" wx:key="{{index}}">
-    <i-grid-item wx:for="{{temp}}" wx:key="{{item.category_id}}">
+  <i-grid i-class="grid" wx:for="{{category}}" wx:for-item="temp" wx:key="index">
+    <i-grid-item wx:for="{{temp}}" wx:key="category_id">
       <view bindtap="tapCategory" data-categoryid="{{item.category_id}}">
         <i-grid-icon>
           <image src="{{'../../static/icon/category_'+item.category_id+'.png'}}" />

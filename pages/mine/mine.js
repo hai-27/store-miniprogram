@@ -44,11 +44,16 @@ Page({
     }
   },
   getUserInfo: function (e) {
-    console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
+    })
+  },
+  toOrders(){
+    // 跳转我的订单页面
+    wx.navigateTo({
+      url: '/pages/orders/orders'
     })
   }
 })

@@ -23,7 +23,6 @@ App({
         });
         // 登录成功
         if (loginRes.code === '001') {
-          console.log("登录成功")
           this.globalData.userId = loginRes.userId;
           // 获取购物车信息
           if (this.globalData.userId) {

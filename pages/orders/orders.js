@@ -42,7 +42,6 @@ Page({
         user_id: getApp().globalData.userId
       }
     });
-    console.log(orderRes)
     if (orderRes.code === "001") {
       // 计算每个订单的总价格
       let total = [];
@@ -62,7 +61,6 @@ Page({
         orders: orderRes.orders,
         total: total
       });
-      console.log(this.data.orders)
     } else {
       $Message({
         content: orderRes.msg,
