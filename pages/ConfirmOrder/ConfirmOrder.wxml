@@ -1,4 +1,5 @@
 <!--pages/ConfirmOrder/ConfirmOrder.wxml-->
+<i-message id="message" />
 
 <i-cell title="购物清单" class="space"></i-cell>
 <block wx:for="{{getCheckGoods}}" wx:key="{{item.id}}">
@@ -24,4 +25,4 @@
 <i-cell title="运费" value="{{'0'+'元'}}"></i-cell>
 
 <view style="height:50px;" class="space"></view>
-<view class="bottom-bar">使用微信支付</view>
+<view class="bottom-bar" bindtap="confirmOrder">使用微信支付</view>

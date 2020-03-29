@@ -2,6 +2,9 @@
 import create from '../../utils/create';
 import store from '../../store/index';
 const {
+  $Message
+} = require('../../components/iview/base/index');
+const {
   baseURL,
   $ajax
 } = getApp().globalData;
@@ -17,12 +20,49 @@ create.Page(store, {
 
   computed: {
     // 获取结算商品信息
-    getCheckGoods(){
+    getCheckGoods() {
       return store.getCheckGoods();
     },
     // 订单总价
-    getTotalPrice(){
+    getTotalPrice() {
       return store.getTotalPrice();
+    }
+  },
+  /**
+   * 提交订单
+   */
+  async confirmOrder(){
+    let addOrderRes = await $ajax('user/order/addOrder', {
+      data: {
+        user_id: getApp().globalData.userId,
+        products: this.data.getCheckGoods
+      }
+    });
+    let products = this.data.getCheckGoods;
+    switch (addOrderRes.code) {
+      // 001代表结算成功
+      case "001":
+        for (let i = 0; i < products.length; i++) {
+          const temp = products[i];
+          // 删除已经结算的购物车商品
+          store.deleteShoppingCart(temp.productID);
+        }
+        // 提示结算结果
+        $Message({
+          content: addOrderRes.msg,
+          type: 'success'
+        });
+        // 跳转我的订单页面
+        wx.navigateTo({
+          url: '/pages/orders/orders'
+        })
+        break;
+      default:
+        // 提示失败信息
+        $Message({
+          content: addOrderRes.msg,
+          type: 'error'
+        });
     }
   },
 
@@ -44,7 +84,17 @@ create.Page(store, {
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    if (this.data.getCheckGoods.length == 0) {
+      $Message({
+        content: '请先勾选商品再结算！',
+        type: 'error'
+      });
+      setTimeout(() => {
+        wx.switchTab({
+          url: '/pages/shoppingCart/shoppingCart'
+        });
+      }, 1000)
+    }
   },
 
   /**
