@@ -7,6 +7,7 @@
     "pages/details/details",
     "pages/confirmOrder/confirmOrder",
     "pages/orders/orders",
+    "pages/collection/collection",
     "pages/logs/logs"
   ],
   "window": {

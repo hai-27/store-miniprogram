@@ -1,6 +1,6 @@
 /* pages/orders/orders.wxss */
 page{
-  background-color: #ececec;
+  background-color: #f5f5f5;
 }
 .space{
   display: block;

@@ -3,7 +3,7 @@
 <block wx:for="{{orders}}" wx:for-item="order" wx:key="index">
   <i-cell title="购物清单" class="space"></i-cell>
   <block wx:for="{{order}}" wx:key="id">
-    <i-card full title="{{item.productName}}" extra="{{item.product_price+'元'}}" thumb="{{baseURL+item.product_picture}}">
+    <i-card full title="{{item.product_name}}" extra="{{item.product_price+'元'}}" thumb="{{baseURL+item.product_picture}}">
       <text slot="num">{{item.product_num}}x</text>
     </i-card>
   </block>

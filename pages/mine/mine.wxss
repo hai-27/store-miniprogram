@@ -1,4 +1,17 @@
 /* pages/mine/mine.wxss */
+.mine{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  background-color: #f5f5f5;
+}
+.space{
+  display: block;
+  margin-top: 10px;
+}
+
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -19,3 +32,4 @@
 .usermotto {
   margin-top: 200px;
 }
+

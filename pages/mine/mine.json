@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "i-cell": "../../components/iview/cell/index",
+    "i-card": "../../components/iview/card/index",
+    "i-icon": "../../components/iview/icon/index"
+  }
 }

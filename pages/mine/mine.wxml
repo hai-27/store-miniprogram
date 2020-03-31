@@ -1,14 +1,26 @@
 <!--pages/mine/mine.wxml-->
-<view class="container">
+<!-- 没有用户信息式显示 -->
+<view class="container" wx:if="{{!hasUserInfo && canIUse}}">
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
   </view>
   <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+    <text class="user-motto">欢迎你！</text>
   </view>
 </view>
-<button bindtap="toOrders">toOrders</button>
+<!-- 没有用户信息式显示/ -->
+
+<view wx:if="{{hasUserInfo}}" class="mine">
+  <i-card full title="{{userInfo.nickName}}" thumb="{{userInfo.avatarUrl}}"></i-card>
+
+  <i-cell title="我的订单" is-link url="/pages/orders/orders" class="space"></i-cell>
+  <i-cell title="我的收藏" is-link url="/pages/collection/collection" class="space"></i-cell>
+
+  <i-cell title="会员中心" is-link class="space"></i-cell>
+  <i-cell title="我的优惠券" is-link></i-cell>
+  <i-cell title="我的F码" is-link></i-cell>
+  <i-cell title="我的红包" is-link></i-cell>
+
+  <i-cell title="在线客服" is-link class="space"></i-cell>
+  <i-cell title="设置" is-link></i-cell>
+</view>
