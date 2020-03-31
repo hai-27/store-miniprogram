@@ -43,7 +43,7 @@
   <view class="add-shopping-cart" bindtap="addShoppingCart">
     <text>加入购物车</text>
   </view>
-  <view class="add-collect">
+  <view class="add-collect" bindtap="addCollect">
     <text>喜欢</text>
   </view>
 </view>

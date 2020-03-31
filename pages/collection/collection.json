@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "my-list": "../../components/Mylist/Mylist"
+  },
+  "navigationBarTitleText": "我的收藏"
+}

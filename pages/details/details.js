@@ -29,15 +29,17 @@ create.Page(store, {
       return store.getNum();
     }
   },
-  // 加入购物车
+  /**
+   * 添加购物车
+   */
   async addShoppingCart() {
-    // 判断是否登录,没有登录则显示登录组件
+    // 判断是否登录
     if (!getApp().globalData.userId) {
       // 先登录
       return;
     }
     // 如果达到限购数量不继续执行
-    if (this.data.full){
+    if (this.data.full) {
       $Message({
         content: "加购数量达到限购数量",
         type: 'warning'
@@ -81,6 +83,38 @@ create.Page(store, {
           content: addShoppingCartRes.msg,
           type: 'error'
         });
+    }
+  },
+  /**
+   * 添加收藏
+   */
+  async addCollect() {
+    // 判断是否登录
+    if (!getApp().globalData.userId) {
+      // 先登录
+      return;
+    }
+
+    // 向后端发起加入购物车的请求
+    let addCollect = await $ajax('user/collect/addCollect', {
+      data: {
+        user_id: getApp().globalData.userId,
+        product_id: this.data.productID
+      }
+    });
+
+    if (addCollect.code == "001") {
+      // 添加收藏成功
+      $Message({
+        content: addCollect.msg,
+        type: 'success'
+      });
+    } else {
+      // 添加收藏失败
+      $Message({
+        content: addCollect.msg,
+        type: 'error'
+      });
     }
   },
 

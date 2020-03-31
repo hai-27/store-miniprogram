@@ -1,0 +1,11 @@
+<!--pages/collection/collection.wxml-->
+<block wx:if="{{collectList.length == 0}}">
+  <view class="empty">
+    <image src="../../static/imgs/cart-empty.jpg"></image>
+    <text>您还没有收藏的商品哦！</text>
+  </view>
+</block>
+
+<view>
+  <my-list arr="{{collectList}}"></my-list>
+</view>
