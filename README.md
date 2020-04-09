@@ -47,48 +47,48 @@
 
 首页主要是对商品的展示，有轮播图展示推荐的商品，热门商品分类九宫格、分类别对热门商品进行展示。
 
-![](https://github.com/hai-27/vue-store/blob/master/public/screenshots/weChatMiniProgramScreenshots/home.png)
+![](https://raw.githubusercontent.com/hai-27/vue-store/master/public/screenshots/weChatMiniProgramScreenshots/home.png)
 
 ### 发现（即全部商品）
 
 全部商品页面集成了全部商品展示、商品分类查询，以及根据关键字搜索商品结果展示。
 
-![](https://github.com/hai-27/vue-store/blob/master/public/screenshots/weChatMiniProgramScreenshots/goods.png)
+![](https://raw.githubusercontent.com/hai-27/vue-store/master/public/screenshots/weChatMiniProgramScreenshots/goods.png)
 
 ### 商品详情页
 
 商品详情页主要是对某个商品的详细信息进行展示，用户可以在这里把喜欢的商品加入购物车或收藏列表。
 
-![](https://github.com/hai-27/vue-store/blob/master/public/screenshots/weChatMiniProgramScreenshots/detail.png)
+![](https://raw.githubusercontent.com/hai-27/vue-store/master/public/screenshots/weChatMiniProgramScreenshots/detail.png)
 
 ### 我的购物车
 
 购物车采用[omix](https://github.com/Tencent/omi)进行全局状态管理，实现了购物车商品的添加、删除、增加商品数量、选择结算商品、全选购物车商品结算等功能。
 
-![](https://github.com/hai-27/vue-store/blob/master/public/screenshots/weChatMiniProgramScreenshots/shoppingCart.png)
+![](https://raw.githubusercontent.com/hai-27/vue-store/master/public/screenshots/weChatMiniProgramScreenshots/shoppingCart.png)
 
 ### 订单结算
 
 用户在购物车选择了准备购买的商品后，点击“去结算”按钮，会来到该页面。
 用户在这里选择收货地址，确认订单的相关信息，然后确认购买。
 
-![](https://github.com/hai-27/vue-store/blob/master/public/screenshots/weChatMiniProgramScreenshots/confirmOrder.png)
+![](https://raw.githubusercontent.com/hai-27/vue-store/master/public/screenshots/weChatMiniProgramScreenshots/confirmOrder.png)
 
 ### 我的收藏
 
 用户在商品的详情页，可以通过点击加入 喜欢 按钮，把喜欢的商品加入到收藏列表。
 
-![](https://github.com/hai-27/vue-store/blob/master/public/screenshots/weChatMiniProgramScreenshots/collection.png)
+![](https://raw.githubusercontent.com/hai-27/vue-store/master/public/screenshots/weChatMiniProgramScreenshots/collection.png)
 
 ### 我的订单
 
 对用户的所有订单进行展示。
 
-![](https://github.com/hai-27/vue-store/blob/master/public/screenshots/weChatMiniProgramScreenshots/orders.png)
+![](https://raw.githubusercontent.com/hai-27/vue-store/master/public/screenshots/weChatMiniProgramScreenshots/orders.png)
 
 ### 我的
 
-![](https://github.com/hai-27/vue-store/blob/master/public/screenshots/weChatMiniProgramScreenshots/mine.png)
+![](https://raw.githubusercontent.com/hai-27/vue-store/master/public/screenshots/weChatMiniProgramScreenshots/mine.png)
 
 ## 运行项目
 
