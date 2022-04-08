@@ -9,8 +9,8 @@
 </block>
 
 <i-cell title="收货地址" class="space"></i-cell>
-<i-cell label="姓名" title="陈家海" is-link></i-cell>
-<i-cell label="电话" title="135***8623" is-link></i-cell>
+<i-cell label="姓名" title="陈同学" is-link></i-cell>
+<i-cell label="电话" title="135***0000" is-link></i-cell>
 <i-cell label="送至" title="广州市 白云区" is-link></i-cell>
 
 <i-cell title="发票信息" class="space"></i-cell>
